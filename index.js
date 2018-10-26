@@ -3,6 +3,28 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+var SerialPort = require('serialport');
+
+var serialPort = new SerialPort('/dev/ttyACM0', {
+    baudrate: 9600,
+    parser: serialport.parsers.readline("\n")
+});
+
+
+// Switches the port into "flowing mode"
+serialPort.on('data', function (data) {
+    console.log('Data:', data);
+    socket.emit('data', data);
+});
+
+// Read data that is available but keep the stream from entering //"flowing mode"
+serialPort.on('readable', function () {
+    console.log('Data:', port.read());
+});
+
+
+
+
 
 app.use(express.static('node_modules'));
 
