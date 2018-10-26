@@ -4,7 +4,7 @@
  *
  */
 
- // Import stuff -----
+// Import stuff -----
 
 const express = require('express');
 const http = require('http');
@@ -22,13 +22,21 @@ var server = http.Server(app);
 var io = socket(server);
 
 app.use(express.static('node_modules'));
+app.use(express.static('www'));
+
 
 // 2. serial port
 var port = new SerialPort('/dev/tty-usbserial1', {
     baudRate: 9600
+}, function (err) {
+    if (err) {
+        console.error(err);
+    }
 });
 
-var parser = port.pipe(new Readline({ delimiter: '\r\n' }));
+var parser = port.pipe(new Readline({
+    delimiter: '\r\n'
+}));
 
 
 
@@ -50,7 +58,7 @@ io.on('connection', function (socket) {
     });
 });
 
-parser.on('data', function(data){
+parser.on('data', function (data) {
     console.log(data);
     io.emit('data', data);
 });
@@ -69,7 +77,7 @@ function emmiter() {
 
 // Start Server -----
 
-server.listen(3000, function(){
+server.listen(3000, function () {
     console.log('Listening on port 3000...');
     //setInterval(emmiter, 3000);
 });
