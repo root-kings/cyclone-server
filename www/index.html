@@ -5,23 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyclone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="css/page.css">
+    <title>Global Shaper's Community</title>
 </head>
 
 <body>
-    
-    <script src="/socket.io-client/dist/socket.io.js"></script>
-    
+    <div class="row">
+        <div class="col s12 l1">
+            <img src="images/gscn.jpg" alt="" width="100">
+        </div>
+
+        <div class="col s12 l8">
+            <div>
+                <h3 class="center">Global Shapers Community, Nagpur</h3>
+                <div class="text" id="text">
+                    <h4 class="center">
+                        #MyKMChallenge!!
+                    </h4>
+                </div>
+                <!-- <div class="mySlides fade">
+                    <div class="text" id="text">
+                        <h1 class="left">
+                            #Believe
+                        </h1>
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="text" id="text">
+                        <h1 class="left">
+                            #Inspire
+                        </h1>
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="text" id="text">
+                        <h1 class="left">
+                            #zxcvbnm
+                        </h1>
+                    </div>
+                </div>
+-->
+            </div>
+        </div>
+        <div class="col s12 l3" style="overflow: visible;height: 151px;">
+            <img src="images/trimmed.png" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l8">
+            <canvas id="myChart" style="height: 13px;width: 40px;"></canvas>
+            <canvas id="foo" height="100" width="200"></canvas>
+        </div>
+    </div>
+    <script src="js/chart.js"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/gauge.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        var socket = io.connect('http://localhost:3000');
-        
-        socket.on('news', function (data) {
-            console.log(data);
-            socket.emit('my other event', {
-                my: 'data'
-            });
-        });
+        M.Autoinit();
+
     </script>
+    <script src="page.js"></script>
 </body>
 
 </html>
