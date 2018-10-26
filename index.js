@@ -1,29 +1,20 @@
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
-var io = require('socket.io')(server);
+var socket = require('socket.io');
+var io = socket(server);
 
-var SerialPort = require('serialport');
-
-var serialPort = new SerialPort('/dev/ttyACM0', {
-    baudrate: 9600,
-    parser: serialport.parsers.readline("\n")
+const SerialPort = require('serialport');
+const Readline = require('@serialport/parser-readline');
+const port = new SerialPort('/dev/tty-usbserial1', {
+    baudRate: 9600
 });
 
-
-// Switches the port into "flowing mode"
-serialPort.on('data', function (data) {
-    console.log('Data:', data);
-    socket.emit('data', data);
+const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
+parser.on('data', function(data){
+    console.log(data);
+    io.emit(data);
 });
-
-// Read data that is available but keep the stream from entering //"flowing mode"
-serialPort.on('readable', function () {
-    console.log('Data:', port.read());
-});
-
-
-
 
 
 app.use(express.static('node_modules'));
@@ -43,7 +34,14 @@ io.on('connection', function (socket) {
 });
 
 
+function emmiter() {
+    io.emit("news", {
+        hello: "krushn"
+    })
+}
+
 server.listen(3000, function(){
     console.log('Listening on port 3000...');
+    setInterval(emmiter, 3000);
 });
 // WARNING: app.listen(80) will NOT work here!
