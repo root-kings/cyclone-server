@@ -7,7 +7,7 @@
  // Import stuff -----
 
 const express = require('express');
-const http = requre('http');
+const http = require('http');
 const socket = require('socket.io');
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
