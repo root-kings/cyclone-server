@@ -1,27 +1,44 @@
-var express = require('express');
-var app = express();
-var server = require('http').Server(app);
-var socket = require('socket.io');
-var io = socket(server);
+/*
+ * Written by Krushn Dayshmookh
+ * krushndayshmookh@gmail.com
+ *
+ */
 
+ // Import stuff -----
+
+const express = require('express');
+const http = requre('http');
+const socket = require('socket.io');
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
-const port = new SerialPort('/dev/tty-usbserial1', {
+
+
+
+// Set up globals -----
+
+// 1. web server
+var app = express();
+var server = http.Server(app);
+var io = socket(server);
+
+app.use(express.static('node_modules'));
+
+// 2. serial port
+var port = new SerialPort('/dev/tty-usbserial1', {
     baudRate: 9600
 });
 
-const parser = port.pipe(new Readline({ delimiter: '\r\n' }));
-parser.on('data', function(data){
-    console.log(data);
-    io.emit(data);
-});
+var parser = port.pipe(new Readline({ delimiter: '\r\n' }));
 
 
-app.use(express.static('node_modules'));
+
+
+// Define routes and events -----
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/www/index.html');
 });
+
 
 io.on('connection', function (socket) {
     socket.emit('news', {
@@ -33,6 +50,14 @@ io.on('connection', function (socket) {
     });
 });
 
+parser.on('data', function(data){
+    console.log(data);
+    io.emit('data', data);
+});
+
+
+
+// Debug =====
 
 function emmiter() {
     io.emit("news", {
@@ -40,8 +65,12 @@ function emmiter() {
     })
 }
 
+// ===========
+
+// Start Server -----
+
 server.listen(3000, function(){
     console.log('Listening on port 3000...');
-    setInterval(emmiter, 3000);
+    //setInterval(emmiter, 3000);
 });
 // WARNING: app.listen(80) will NOT work here!
