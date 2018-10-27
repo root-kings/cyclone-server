@@ -1,6 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      direction: 'left'
-    });
-  });
+
+function openNav() {
+  document.getElementById("Splash").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("Splash").style.width = "0%";
+}
