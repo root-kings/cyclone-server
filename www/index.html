@@ -25,28 +25,6 @@
                         #MyKMChallenge!!
                     </h4>
                 </div>
-                <!-- <div class="mySlides fade">
-                    <div class="text" id="text">
-                        <h1 class="left">
-                            #Believe
-                        </h1>
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="text" id="text">
-                        <h1 class="left">
-                            #Inspire
-                        </h1>
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="text" id="text">
-                        <h1 class="left">
-                            #zxcvbnm
-                        </h1>
-                    </div>
-                </div>
--->
             </div>
         </div>
         <div class="col s12 l3" style="overflow: visible;height: 151px;">
@@ -55,7 +33,7 @@
     </div>
     <div class="row">
         <div class="col s12 l8">
-            <canvas id="myChart" style="height: 13px;width: 40px;"></canvas>
+            <canvas id="myChart" style="height: 130px;width: 400px;"></canvas>
             <canvas id="foo" height="100" width="200"></canvas>
         </div>
     </div>
@@ -63,17 +41,20 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/materialize.min.js"></script>
-    <script src="/js/Chart.Bundle.min.js"></script>
-    <script src="/js/gauge.min.js"></script>
+    <script src="js/Chart.Bundle.min.js"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/gauge.js"></script>
 
 
     <script>
         $(document).ready(function () {
             M.AutoInit();
+            $('.fixed-action-btn').floatingActionButton();
         });
     </script>
 
-    <script src="page.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
