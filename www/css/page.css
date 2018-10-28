@@ -187,7 +187,7 @@ background: linear-gradient(180deg, rgba(2,170,0,1) 0%, rgba(239,245,19,1) 47%, 
 
     border-top: 0px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 400px solid red;
+    border-bottom: 400px solid white;
     border-left: 0px solid transparent;
     position: relative;
 }
@@ -199,7 +199,7 @@ background: linear-gradient(180deg, rgba(2,170,0,1) 0%, rgba(239,245,19,1) 47%, 
 
     border-top: 0px solid transparent;
     border-right: 0px solid transparent;
-    border-bottom: 400px solid red;
+    border-bottom: 400px solid white;
     border-left: 100px solid transparent;
     position: relative;
 
