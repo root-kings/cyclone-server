@@ -14,12 +14,13 @@
 <body>
     <div class="row">
         <div class="col s12 l1">
-            <img src="/images/gscn.jpg" alt="" width="100">
+            <img src="images/gscn.jpeg" alt="" width="220">
         </div>
 
-        <div class="col s12 l8">
-            <div>
-                <h3 class="center">Global Shapers Community, Nagpur</h3>
+        <div class="col s12 l8" style="overflow: visible">
+            <div style="margin-left: 250px;overflow-x: visible">
+                <h3 class="center">Urban Mobility India 2018</h3>
+                <h5 class="center"> 2<sup>nd</sup> - 4<sup>th</sup> Nov., Nagpur</h5>
                 <div class="text" id="text">
                     <h4 class="center">
                         #MyKMChallenge!!
@@ -28,15 +29,74 @@
             </div>
         </div>
         <div class="col s12 l3" style="overflow: visible;height: 151px;">
-            <img src="/images/trimmed.png" alt="">
+            <img src="images/left.png" alt="" height="300" class="right">
         </div>
     </div>
     <div class="row">
-        <div class="col s12 l8">
-            <canvas id="myChart" style="height: 130px;width: 400px;"></canvas>
-            <canvas id="foo" height="100" width="200"></canvas>
+       <div class="col l1"></div>
+        <div class="col s12 l10" >
+            <canvas id="myChart" style="height: 130px;width: 400px;" class="center"></canvas>
+        </div>
+        <div class="col l1"></div>
+    </div>
+    <div class="row">
+        <div class="col s12 l1">
+
+        </div>
+        <div class="col s12 l2">
+            <canvas id="foo"></canvas>
+        </div>
+        <div class="col s12 l2">
+            <canvas id="foo1"></canvas>
+        </div>
+        <div class="col s12 l2">
+            <canvas id="foo2"></canvas>
+        </div>
+        <div class="col s12 l2">
+            <canvas id="foo3"></canvas>
+        </div>
+        <div class="col s12 l2">
+            <canvas id="foo4"></canvas>
+        </div>
+        <div class="col s12 l1">
+
         </div>
     </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">play_circle_outline</i></a></li>
+            <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li>
+
+        </ul>
+    </div>
+
+
+
+
+    <div id="Splash" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <img src="images/gscn%20copy.png" alt="">
+            <div class="row white-text">
+                <div class="col s4">
+                    <h1 style="font-size: 180px">01</h1>
+                    <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
+                </div>
+                <div class="col s4">
+                    <h1 style="font-size: 180px">02</h1>
+                    <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
+                </div>
+                <div class="col s4">
+                    <h1 style="font-size: 180px">03</h1>
+                    <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="/js/jquery.min.js"></script>
@@ -46,6 +106,16 @@
 
     <script src="/js/chart.js"></script>
     <script src="/js/gauge.js"></script>
+    
+
+    <script>
+        $(document).ready(function() {
+            M.AutoInit();
+            $('.fixed-action-btn').floatingActionButton();
+        });
+
+    </script>
+
     <script src="/js/index.js"></script>
 </body>
 

@@ -1,6 +1,8 @@
-$(document).ready(function () {
-    M.AutoInit();
 
-    $('.fixed-action-btn').floatingActionButton();
+function openNav() {
+  document.getElementById("Splash").style.width = "100%";
+}
 
-});
+function closeNav() {
+  document.getElementById("Splash").style.width = "0%";
+}
