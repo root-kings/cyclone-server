@@ -209,6 +209,6 @@ background: linear-gradient(180deg, rgba(2,170,0,1) 0%, rgba(239,245,19,1) 47%, 
     height: 300px;
     width: 200px;
     /* margin: 0px; */
-    background: yellow;
+    background: white;
     position: relative;
 }
