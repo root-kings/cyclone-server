@@ -4,9 +4,9 @@
     font-style: normal;
     font-weight: 400;
     src: url(../fonts/material-icons.woff2) format('woff2');
-  }
+}
 
-  .material-icons {
+.material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -21,4 +21,4 @@
     -webkit-font-feature-settings: 'liga';
     font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
-  }
+}

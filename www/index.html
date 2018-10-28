@@ -168,18 +168,17 @@
 
     <script>
         AOS.init();
-
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             M.AutoInit();
             $('.fixed-action-btn').floatingActionButton();
             // mrunal();
 
 
-            setGuage([0,0,0,0,0]);
+            setGuage([0, 0, 0, 0, 0]);
 
-            setBar([0,0,0,0,0]);
+            setBar([0, 0, 0, 0, 0]);
 
         });
 
@@ -207,12 +206,11 @@
                 Math.floor(Math.random() * 400)
             ]
         }
-
     </script>
 
     <script src="/js/index.js"></script>
 
-    
+
 
     <script src="/socket.io-client/dist/socket.io.js"></script>
 
@@ -222,9 +220,9 @@
         socket.on('data', function (data) {
             console.log(data);
 
-            setGuage([data.kmph,0,0,0,0]);
+            setGuage([data.kmph, 0, 0, 0, 0]);
 
-            setBar([data.meters,0,0,0,0]);
+            setBar([data.meters, 0, 0, 0, 0]);
 
 
         });
