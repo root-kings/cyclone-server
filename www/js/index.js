@@ -1,10 +1,19 @@
 
 function openNav() {
   document.getElementById("Splash").style.width = "100%";
+
 }
 
 function closeNav() {
   document.getElementById("Splash").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("Splash2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("Splash2").style.width = "0%";
 }
 
 

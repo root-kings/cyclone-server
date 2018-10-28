@@ -1,6 +1,6 @@
 var ctx = document.getElementById('myChart').getContext('2d');
 var gradient = ctx.createLinearGradient(0, 0, 0, 700)
-gradient.addColorStop(0, '#ffcc33')
+gradient.addColorStop(0, '00ff00')
 gradient.addColorStop(1, '#ffb347');
 
 var chart = new Chart(ctx, {
