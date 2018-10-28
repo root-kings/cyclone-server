@@ -39,6 +39,7 @@
 
 
     <div class="row">
+        <div class="col s1"></div>
         <div class="col s2">
             <div class="bar">
                 <div class="left"></div>
@@ -157,6 +158,8 @@
 
             setGuage(genRandSpeed());
 
+            setBar(genRandDist());
+
         });
 
         function genRandSpeed() {
@@ -173,7 +176,7 @@
 
 
         function genRandDist() {
-            // console.log("Generating speeds...");
+            // console.log("Generating distance...");
 
             return [
                 Math.floor(Math.random() * 400),
