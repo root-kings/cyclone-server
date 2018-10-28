@@ -175,7 +175,8 @@
 .bar {
     height: 400px;
     width: 200px;
-    background: #7acf18;
+    background: rgb(2,170,0);
+background: linear-gradient(180deg, rgba(2,170,0,1) 0%, rgba(239,245,19,1) 47%, rgba(255,76,38,1) 100%);
 
 }
 
