@@ -156,9 +156,9 @@
             // mrunal();
 
 
-            setGuage(genRandSpeed());
+            setGuage([0,0,0,0,0]);
 
-            setBar(genRandDist());
+            setBar([0,0,0,0,0]);
 
         });
 
@@ -190,18 +190,23 @@
 
     <script src="/js/index.js"></script>
 
-    <!-- 
+    
 
     <script src="/socket.io-client/dist/socket.io.js"></script>
 
     <script>
-        var socket = io.connect('http://localhost:3000');
+        var socket = io.connect('http://localhost:3450');
 
         socket.on('data', function (data) {
             console.log(data);
 
+            setGuage([data.kmph,0,0,0,0]);
+
+            setBar([data.meters,0,0,0,0]);
+
+
         });
-    </script> -->
+    </script>
 </body>
 
 </html>

@@ -48,6 +48,8 @@ app.get('/', function (req, res) {
 });
 
 
+var oldRounds = 0;
+
 io.on('connection', function (socket) {
     socket.emit('news', {
         hello: 'world'
@@ -59,8 +61,24 @@ io.on('connection', function (socket) {
 });
 
 parser.on('data', function (data) {
+    //console.log(data);
+
+    var totalrounds = parseInt(data);
+    var diff = totalrounds - oldRounds;
+    oldRounds = totalrounds;
+
+    var meters = totalrounds * 2 * 3.14 * 0.30;
+    var kmph = diff * 60 * 60 / 1000;
+
+    var finaldata = {
+        meters: meters,
+        kmph: kmph
+    }
+
     console.log(data);
-    io.emit('data', data);
+
+    io.emit('data', finaldata);
+
 });
 
 
@@ -77,7 +95,7 @@ function emmiter() {
 
 // Start Server -----
 
-server.listen(3000, function () {
+server.listen(3450, function () {
     console.log('Listening on port 3000...');
     //setInterval(emmiter, 3000);
 });
