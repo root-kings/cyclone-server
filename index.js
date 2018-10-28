@@ -26,7 +26,7 @@ app.use(express.static('www'));
 
 
 // 2. serial port
-var port = new SerialPort('/dev/tty-usbserial1', {
+var port = new SerialPort('/dev/ttyACM0', {
     baudRate: 9600
 }, function (err) {
     if (err) {
