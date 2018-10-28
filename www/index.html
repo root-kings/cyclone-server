@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/materialize.min.css">
     <link rel="stylesheet" href="/css/MaterialIcons.css">
     <link rel="stylesheet" href="/css/page.css">
+    <link rel="stylesheet" href="/css/aos.css">
     <title>Global Shaper's Community</title>
 </head>
 
@@ -80,9 +81,6 @@
 
 
     <div class="row">
-        <div class="col s12 l1">
-
-        </div>
         <div class="col s12 l2">
             <canvas id="foo0"></canvas>
         </div>
@@ -109,6 +107,7 @@
         <ul>
             <li><a class="btn-floating red"><i class="material-icons">play_circle_outline</i></a></li>
             <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons" onclick="openNav2()">strikethrough_s</i></a></li>
 
         </ul>
     </div>
@@ -119,23 +118,42 @@
     <div id="Splash" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <img src="images/gscn%20copy.png" alt="">
+            <img src="images/gscn%20copy.png" alt="" width="400">
+            <div class="row white-text">
+                <div class="col s4">
+
+                </div>
+                <div class="col s4">
+
+                </div>
+                <div class="col s4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="Splash2" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+        <div class="overlay-content">
             <div class="row white-text">
                 <div class="col s4">
                     <h1 style="font-size: 180px">01</h1>
                     <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
                 </div>
                 <div class="col s4">
-                    <h1 style="font-size: 180px">02</h1>
+                    <h1 style="font-size: 180px">01</h1>
                     <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
                 </div>
                 <div class="col s4">
-                    <h1 style="font-size: 180px">03</h1>
+                    <h1 style="font-size: 180px">01</h1>
                     <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- </div> -->
 
@@ -144,11 +162,14 @@
     <script src="/js/materialize.min.js"></script>
     <!-- <script src="/js/Chart.Bundle.min.js"></script> -->
     <script src="/js/gauge.min.js"></script>
-
+    <script src="js/aos.js"></script>
     <!-- <script src="/js/chart.js"></script> -->
     <script src="/js/gauge.js"></script>
 
+    <script>
+        AOS.init();
 
+    </script>
     <script>
         $(document).ready(function() {
             M.AutoInit();
@@ -186,6 +207,7 @@
                 Math.floor(Math.random() * 400)
             ]
         }
+
     </script>
 
     <script src="/js/index.js"></script>
