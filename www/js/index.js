@@ -22,3 +22,7 @@ function setBar(distances) {
     document.getElementById("bar3").style.height = JSON.stringify(400 - distances[3]) + "px";
     document.getElementById("bar4").style.height = JSON.stringify(400 - distances[4]) + "px";
 }
+
+$(document).ready(function(){
+    $('.slider').slider();
+  });

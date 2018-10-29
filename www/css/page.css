@@ -5,6 +5,15 @@
 *{
     font-family: 'Krub', sans-serif;
 }
+
+.slider .indicators .indicator-item.active
+{
+    background-color: white;
+}
+.slider .indicators .indicator-item
+{
+    background-color: white;
+}
 .slideshow-container {
     max-width: 80%;
     position: relative;

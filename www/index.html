@@ -18,16 +18,16 @@
 
     <div class="row">
         <div class="col s12 l1">
-            <img src="images/gscn.jpeg" alt="" width="220">
+            <img src="images/gscn%20copy.png" alt="" width="220">
         </div>
 
         <div class="col s12 l8" style="overflow: visible">
             <div style="margin-left: 250px;overflow-x: visible">
                 <h3 class="center">Urban Mobility India 2018</h3>
-                <h5 class="center"> 2<sup>nd</sup> - 4<sup>th</sup> Nov., Nagpur</h5>
+                <h5 class="center"> 2<sup>nd</sup> - 4<sup>th</sup> November, Nagpur</h5>
                 <div class="text" id="text">
                     <h4 class="center">
-                        #MyKMChallenge!!
+                        #Let'sDoIt
                     </h4>
                 </div>
             </div>
@@ -37,43 +37,41 @@
         </div>
     </div>
 
-
-
     <div class="row">
         <div class="col s1"></div>
         <div class="col s2">
             <div class="bar">
                 <div class="left"></div>
-                <div class="right"></div>
-                <div class="baroverlay" id="bar0"></div>
+                <div class="right" style="border-left: 2px solid #7acf18"></div>
+                <div class="baroverlay" id="bar0" style="border-top:2px solid #7acf18"></div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar">
                 <div class="left"></div>
-                <div class="right"></div>
-                <div class="baroverlay" id="bar1"></div>
+                <div class="right" style="border-left: 2px solid #7acf18"></div>
+                <div class="baroverlay" id="bar1" style="border-top:2px solid #7acf18"></div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar">
                 <div class="left"></div>
-                <div class="right"></div>
-                <div class="baroverlay" id="bar2"></div>
+                <div class="right" style="border-left: 2px solid #7acf18"></div>
+                <div class="baroverlay" id="bar2" style="border-top:2px solid #7acf18"></div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar">
                 <div class="left"></div>
-                <div class="right"></div>
-                <div class="baroverlay" id="bar3"></div>
+                <div class="right" style="border-left: 2px solid #7acf18"></div>
+                <div class="baroverlay" id="bar3" style="border-top:2px solid #7acf18"></div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar">
                 <div class="left"></div>
-                <div class="right"></div>
-                <div class="baroverlay" id="bar4"></div>
+                <div class="right" style="border-left: 2px solid #7acf18"></div>
+                <div class="baroverlay" id="bar4" style="border-top:2px solid #7acf18"></div>
             </div>
         </div>
     </div>
@@ -106,53 +104,13 @@
         </a>
         <ul>
             <li><a class="btn-floating red"><i class="material-icons">play_circle_outline</i></a></li>
-            <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons" onclick="openNav2()">strikethrough_s</i></a></li>
+            <!-- <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li> -->
+            <li><a class="btn-floating green" href="splash.html"><i class="material-icons">strikethrough_s</i></a></li>
 
         </ul>
     </div>
 
 
-
-
-    <div id="Splash" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-            <img src="images/gscn%20copy.png" alt="" width="400">
-            <div class="row white-text">
-                <div class="col s4">
-
-                </div>
-                <div class="col s4">
-
-                </div>
-                <div class="col s4">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="Splash2" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-        <div class="overlay-content">
-            <div class="row white-text">
-                <div class="col s4">
-                    <h1 style="font-size: 180px">01</h1>
-                    <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
-                </div>
-                <div class="col s4">
-                    <h1 style="font-size: 180px">01</h1>
-                    <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
-                </div>
-                <div class="col s4">
-                    <h1 style="font-size: 180px">01</h1>
-                    <h6 style="font-size:40px">wiqetrqriqeryrtyiqer</h6>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- </div> -->
@@ -175,12 +133,8 @@
             M.AutoInit();
             $('.fixed-action-btn').floatingActionButton();
             // mrunal();
-
-
-            setGuage([0,0,0,0,0]);
-
-            setBar([0,0,0,0,0]);
-
+            setGuage([0, 0, 0, 0, 0]);
+            setBar([0, 0, 0, 0, 0]);
         });
 
         function genRandSpeed() {
@@ -212,22 +166,23 @@
 
     <script src="/js/index.js"></script>
 
-    
+
 
     <script src="/socket.io-client/dist/socket.io.js"></script>
 
     <script>
         var socket = io.connect('http://localhost:3450');
 
-        socket.on('data', function (data) {
+        socket.on('data', function(data) {
             console.log(data);
 
-            setGuage([data.kmph,0,0,0,0]);
+            setGuage([data.kmph, 0, 0, 0, 0]);
 
-            setBar([data.meters,0,0,0,0]);
+            setBar([data.meters, 0, 0, 0, 0]);
 
 
         });
+
     </script>
 </body>
 
