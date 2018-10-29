@@ -126,15 +126,18 @@
 
     <script>
         AOS.init();
-
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             M.AutoInit();
             $('.fixed-action-btn').floatingActionButton();
             // mrunal();
-            setGuage([0, 0, 0, 0, 0]);
-            setBar([0, 0, 0, 0, 0]);
+
+
+            setGuage([10, 10, 10, 10, 10]);
+
+            setBar([400, 400, 400, 400, 400]);
+
         });
 
         function genRandSpeed() {
@@ -161,7 +164,6 @@
                 Math.floor(Math.random() * 400)
             ]
         }
-
     </script>
 
     <script src="/js/index.js"></script>
@@ -176,13 +178,13 @@
         socket.on('data', function(data) {
             console.log(data);
 
-            setGuage([data.kmph, 0, 0, 0, 0]);
+            setGuage([data[0].kmph, data[1].kmph, data[2].kmph, data[3].kmph, data[4].kmph]);
 
-            setBar([data.meters, 0, 0, 0, 0]);
+            setBar([data[0].meters, data[1].meters, data[2].meters, data[3].meters, data[4].meters]);
 
 
         });
-
+        
     </script>
 </body>
 

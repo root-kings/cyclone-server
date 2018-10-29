@@ -26,7 +26,7 @@ app.use(express.static('www'));
 
 
 // 2. serial port
-var port = new SerialPort('/dev/ttyACM0', {
+var port0 = new SerialPort('/dev/ttyACM0', {
     baudRate: 9600
 }, function (err) {
     if (err) {
@@ -34,7 +34,31 @@ var port = new SerialPort('/dev/ttyACM0', {
     }
 });
 
-var parser = port.pipe(new Readline({
+var parser0 = port0.pipe(new Readline({
+    delimiter: '\r\n'
+}));
+
+var port1 = new SerialPort('/dev/ttyACM1', {
+    baudRate: 9600
+}, function (err) {
+    if (err) {
+        console.error(err);
+    }
+});
+
+var parser1 = port1.pipe(new Readline({
+    delimiter: '\r\n'
+}));
+
+var port2 = new SerialPort('/dev/ttyACM2', {
+    baudRate: 9600
+}, function (err) {
+    if (err) {
+        console.error(err);
+    }
+});
+
+var parser2 = port2.pipe(new Readline({
     delimiter: '\r\n'
 }));
 
@@ -48,7 +72,8 @@ app.get('/', function (req, res) {
 });
 
 
-var oldRounds = 0;
+var oldRounds = [0, 0, 0, 0, 0, 0];
+var sendableObject = [];
 
 io.on('connection', function (socket) {
     socket.emit('news', {
@@ -60,35 +85,70 @@ io.on('connection', function (socket) {
     });
 });
 
-parser.on('data', function (data) {
-    //console.log(data);
 
-    var totalrounds = parseInt(data);
-    var diff = totalrounds - oldRounds;
-    oldRounds = totalrounds;
+function presentor(rounds, x) {
+    var diff = rounds - oldRounds[x];
+    oldRounds[x] = rounds;
 
-    var meters = totalrounds * 2 * 3.14 * 0.30;
-    var kmph = diff * 60 * 60 / 1000;
-
-    var finaldata = {
-        meters: meters,
-        kmph: kmph
+    sendableObject[x] = {
+        meters: rounds * 2 * 3.14 * 0.30,
+        kmph: diff * 60 * 60 / 1000
     }
+}
 
-    console.log(data);
+parser0.on('data', function (data) {
+    //console.log(data);
+    data = JSON.parse(data);
 
-    io.emit('data', finaldata);
+    presentor(data[0], 0);
+    presentor(data[1], 1);
+
+    // console.log(data);
+
+    // io.emit('data', sendableObject);
+
+    // console.log(sendableObject + " sent.");
 
 });
 
+parser1.on('data', function (data) {
+    //console.log(data);
+    data = JSON.parse(data);
+
+    presentor(data[0], 2);
+    presentor(data[1], 3);
+
+    // console.log(data);
+
+    // io.emit('data', sendableObject);
+
+    // console.log(sendableObject + " sent.");
+
+});
+
+
+parser2.on('data', function (data) {
+    //console.log(data);
+    data = JSON.parse(data);
+
+    presentor(data[0], 4);
+    presentor(data[1], 5);
+
+    // console.log(data);
+
+    // io.emit('data', sendableObject);
+
+    // console.log(sendableObject + " sent.");
+
+});
 
 
 // Debug =====
 
 function emmiter() {
-    io.emit("news", {
-        hello: "krushn"
-    })
+    io.emit('data', sendableObject);
+
+    console.log(sendableObject + " sent.");
 }
 
 // ===========
@@ -96,7 +156,7 @@ function emmiter() {
 // Start Server -----
 
 server.listen(3450, function () {
-    console.log('Listening on port 3000...');
-    //setInterval(emmiter, 3000);
+    console.log('Listening on port 3450...');
+    setInterval(emmiter, 1000);
 });
 // WARNING: app.listen(80) will NOT work here!

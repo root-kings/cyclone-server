@@ -1,8 +1,8 @@
 /* Slideshow container */
 
- @import url('https://fonts.googleapis.com/css?family=Krub');
+@import url('https://fonts.googleapis.com/css?family=Krub');
 
-*{
+* {
     font-family: 'Krub', sans-serif;
 }
 
@@ -47,7 +47,9 @@
     border-radius: 0 3px 3px 0;
 }
  */
+
 /* Position the "next button" to the right */
+
 /*
 .next {
     right: 0;
@@ -59,6 +61,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
  */
+
 /* Caption text */
 
 #text {
@@ -113,6 +116,7 @@
     from {
         opacity: .4
     }
+
     to {
         opacity: 1
     }
@@ -122,14 +126,11 @@
     from {
         opacity: .4
     }
+
     to {
         opacity: 1
     }
 }
-
-
-
-
 
 .overlay {
     height: 100%;
@@ -138,8 +139,8 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -161,7 +162,8 @@
     transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
+.overlay a:hover,
+.overlay a:focus {
     color: #f1f1f1;
 }
 
@@ -173,27 +175,27 @@
 }
 
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
 .bar {
     height: 400px;
     width: 200px;
-    background: rgb(2,170,0);
-background: linear-gradient(180deg, rgba(2,170,0,1) 0%, rgba(239,245,19,1) 47%, rgba(255,76,38,1) 100%);
-
+    background: rgb(2, 170, 0);
+    background: linear-gradient(180deg, rgba(2, 170, 0, 1) 0%, rgba(239, 245, 19, 1) 47%, rgba(255, 76, 38, 1) 100%);
 }
 
 .bar .left {
-
     height: 0px;
     width: 0px;
-
     border-top: 0px solid transparent;
     border-right: 100px solid transparent;
     border-bottom: 400px solid white;
@@ -202,16 +204,13 @@ background: linear-gradient(180deg, rgba(2,170,0,1) 0%, rgba(239,245,19,1) 47%, 
 }
 
 .bar .right {
-
     height: 0px;
     width: 0px;
-
     border-top: 0px solid transparent;
     border-right: 0px solid transparent;
     border-bottom: 400px solid white;
     border-left: 100px solid transparent;
     position: relative;
-
 }
 
 .baroverlay {
