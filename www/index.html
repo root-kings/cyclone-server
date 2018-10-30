@@ -171,10 +171,10 @@
         function showtree(item) {
             $("#bar" + item).hide();
             $("#foo" + item).hide();
-            $("#tree" + item).show();
+            //$("#tree" + item).show();
+            dome[item] = true;
         }
 
-        
 
         function resetstats() {
             socket.emit('reset', true);
@@ -204,7 +204,7 @@
             setGuage([data[0].kmph, data[1].kmph, data[2].kmph, data[3].kmph, data[4].kmph]);
 
             setBar([data[0].meters, data[1].meters, data[2].meters, data[3].meters, data[4].meters]);
-            //checkdone(data);
+            checkdone(data);
 
         });
     </script>

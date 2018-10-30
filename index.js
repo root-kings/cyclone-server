@@ -95,25 +95,25 @@ io.on('connection', function (socket) {
         hello: 'world'
     });
 
-    socket.on('reset', function (data) {
+    // socket.on('reset', function (data) {
         
-        sendableObject = [{
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }];
-    });
+    //     sendableObject = [{
+    //         meters: 0,
+    //         kmph: 0
+    //     }, {
+    //         meters: 0,
+    //         kmph: 0
+    //     }, {
+    //         meters: 0,
+    //         kmph: 0
+    //     }, {
+    //         meters: 0,
+    //         kmph: 0
+    //     }, {
+    //         meters: 0,
+    //         kmph: 0
+    //     }];
+    // });
 });
 
 
