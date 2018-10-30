@@ -109,8 +109,9 @@
             <li><a class="btn-floating red"><i class="material-icons">play_circle_outline</i></a></li>
             <!-- <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li> -->
             <li><a class="btn-floating green" href="splash.html"><i class="material-icons">strikethrough_s</i></a></li>
-            <a class="btn-floating yellow" onclick="showcongrats()"><i class="material-icons">account_circle</i></a>
-            <li></li>
+
+            <li><a class="btn-floating yellow" onclick="showcongrats()"><i class="material-icons">account_circle</i></a></li>
+            <li><a class="btn-floating yellow" onclick="resetstats()"><i class="material-icons">filter_vintage</i></a></li>
 
         </ul>
     </div>
@@ -173,7 +174,11 @@
             $("#tree" + item).show();
         }
 
+        
 
+        function resetstats() {
+            socket.emit('reset', true);
+        }
 
         function checkdone(data) {
             for (var item in data) {
