@@ -6,14 +6,14 @@
     font-family: 'Krub', sans-serif;
 }
 
-.slider .indicators .indicator-item.active
-{
+.slider .indicators .indicator-item.active {
     background-color: white;
 }
-.slider .indicators .indicator-item
-{
+
+.slider .indicators .indicator-item {
     background-color: white;
 }
+
 .slideshow-container {
     max-width: 80%;
     position: relative;
@@ -130,7 +130,7 @@
 
 .overlay {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -184,7 +184,7 @@
     height: 400px;
     width: 200px;
     background: rgb(2, 170, 0);
-    background: linear-gradient(180deg, rgba(2, 170, 0, 1) 0%, rgba(239, 245, 19, 1) 47%, rgba(255, 76, 38, 1) 100%);
+    background: linear-gradient(180deg, rgba(2, 170, 0, 1) 0%, rgba(239, 245, 19, 0.8) 47%, rgba(255, 76, 38, 1) 100%);
 }
 
 .bar .left {
@@ -215,11 +215,19 @@
     position: relative;
 }
 
-    .modal {
-        background-color: rgba(0,0,0,0);
-        margin: 0 auto;
-        min-width: 210px;
-        padding: 40px;
-        width: 30%;
-        margin-top: 100px;
-        }
+.modal {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0 auto;
+    min-width: 210px;
+    padding: 40px;
+    width: 30%;
+    margin-top: 100px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+#overlay1 {
+    opacity: 0.85;
+}
