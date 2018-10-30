@@ -28,7 +28,6 @@
                 <div class="text" id="text">
                     <h4 class="center">
                         #LetsDoIt
-                        <a class="waves-effect waves-light btn" onclick="showcongrats()">Modal</a>
                     </h4>
                 </div>
             </div>
@@ -104,12 +103,14 @@
     </div>
     <div class="fixed-action-btn">
         <a class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
+            <i class="large material-icons">add</i>
         </a>
         <ul>
             <li><a class="btn-floating red"><i class="material-icons">play_circle_outline</i></a></li>
             <!-- <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li> -->
             <li><a class="btn-floating green" href="splash.html"><i class="material-icons">strikethrough_s</i></a></li>
+            <a class="btn-floating yellow" onclick="showcongrats()"><i class="material-icons">account_circle</i></a>
+            <li></li>
 
         </ul>
     </div>
@@ -123,8 +124,11 @@
 
     <!-- </div> -->
 
-    <div class="overlay center" id="overlay1">
-        <img src="images/congra.png" alt="">
+    <div class="overlay center valign-wrapper" id="overlay1">
+        <div class="full-width center">
+            <img src="images/congra.png" alt="">
+
+        </div>
     </div>
 
     <script src="/js/jquery.min.js"></script>
@@ -179,17 +183,25 @@
             }
         }
 
-        function hidecongrats()
-        {
-            $("#overlay1").hide();
+        function hidecongrats() {
+            $("#overlay1").fadeOut();
         }
-        function showcongrats()
-        {
+
+        function showcongrats() {
             console.log("one");
-            $("#overlay1").show();
-            setTimeout(hidecongrats,2000);
+            $("#overlay1").fadeIn();
+            setTimeout(hidecongrats, 2500);
 
         }
+        socket.on('data', function (data) {
+            console.log(data);
+
+            setGuage([data[0].kmph, data[1].kmph, data[2].kmph, data[3].kmph, data[4].kmph]);
+
+            setBar([data[0].meters, data[1].meters, data[2].meters, data[3].meters, data[4].meters]);
+            //checkdone(data);
+
+        });
     </script>
 </body>
 
