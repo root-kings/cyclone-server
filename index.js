@@ -96,7 +96,7 @@ io.on('connection', function (socket) {
     });
 
     // socket.on('reset', function (data) {
-        
+
     //     sendableObject = [{
     //         meters: 0,
     //         kmph: 0
@@ -181,7 +181,7 @@ parser2.on('data', function (data) {
 function emmiter() {
     io.emit('data', sendableObject);
 
-    console.log(sendableObject + " sent.");
+    console.log(JSON.stringify(sendableObject) + " sent. [-- " + JSON.stringify(new Date) + " --]");
 }
 
 // ===========
