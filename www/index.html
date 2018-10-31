@@ -106,7 +106,11 @@
             <i class="large material-icons">add</i>
         </a>
         <ul>
-            <li><a class="btn-floating red"><i class="material-icons">play_circle_outline</i></a></li>
+            <li><a class="btn-floating red" onclick="videoplay3()"><i class="material-icons">play_circle_outline</i>1</a></li>
+            <li><a class="btn-floating red" onclick="videoplay2()"><i class="material-icons">play_circle_outline</i>2</a></li>
+            <li><a class="btn-floating red" onclick="videoplay1()"><i class="material-icons">account_circle</i>3</a></li>
+            <li><a class="btn-floating red" onclick="videoplay4()"><i class="material-icons">play_circle_outline</i>4</a></li>
+            <li><a class="btn-floating red" onclick="videoplay5()"><i class="material-icons">play_circle_outline</i>5</a></li>
             <!-- <li><a class="btn-floating yellow darken-1" onclick="openNav()"><i class="material-icons">polymer</i></a></li> -->
             <li><a class="btn-floating green" href="splash.html"><i class="material-icons">strikethrough_s</i></a></li>
 
@@ -131,7 +135,45 @@
 
         </div>
     </div>
+    <div class="overlay center valign-wrapper " id="videodiv1">
+        <div class="full-width center">
+            <video class="responsive-video" controls>
+                <source src="videos/Video 1.mp4" type="video/mp4">
+            </video>
 
+        </div>
+    </div>
+    <div class="overlay center valign-wrapper" id="videodiv2">
+        <div class="full-width center">
+            <video class="responsive-video" controls>
+                <source src="videos/Video 1.mp4" type="video/mp4">
+            </video>
+
+        </div>
+    </div>
+    <div class="overlay center valign-wrapper" id="videodiv3">
+        
+
+        <div class="full-width center">
+            <video class="responsive-video" controls>
+                <source src="videos/Video 1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="overlay center valign-wrapper" id="videodiv4">
+        <div class="full-width center">
+            <video class="responsive-video" controls>
+                <source src="videos/Video 1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="overlay center valign-wrapper" id="videodiv5">
+        <div class="full-width center">
+            <video class="responsive-video" controls>
+                <source src="videos/Video 1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/materialize.min.js"></script>
     <!-- <script src="/js/Chart.Bundle.min.js"></script> -->
@@ -149,6 +191,11 @@
             $('.fixed-action-btn').floatingActionButton();
             // mrunal();
             $("#overlay1").hide();
+            $("#videodiv5").hide();
+            $("#videodiv4").hide();
+            $("#videodiv3").hide();
+            $("#videodiv2").hide();
+            $("#videodiv1").hide();
 
             setGuage([10, 10, 10, 10, 10]);
 
@@ -198,6 +245,53 @@
             setTimeout(hidecongrats, 2500);
 
         }
+
+        function hidevideoplay1() {
+            $("#videodiv1").fadeOut();
+        }
+
+        function videoplay1() {
+            $("#videodiv1").fadeIn();
+            setTimeout(hidevideoplay1, 1000);
+        }
+
+        function hidevideoplay2() {
+            $("#videodiv2").fadeOut();
+        }
+
+        function videoplay2() {
+            $("#videodiv2").fadeIn();
+            setTimeout(hidevideoplay, 2500);
+        }
+
+        function hidevideoplay3() {
+            $("#videodiv3").fadeOut();
+        }
+
+        function videoplay3() {
+            $("#videodiv3").fadeIn();
+            setTimeout(hidevideoplay, 1200);
+        }
+
+        function hidevideoplay4() {
+            $("#videodiv4").fadeOut();
+        }
+
+        function videoplay4() {
+            $("#videodiv4").fadeIn();
+            setTimeout(hidevideoplay, 2500);
+        }
+
+        function hidevideoplay5() {
+            $("#videodiv5").fadeOut();
+        }
+
+        function videoplay5() {
+            $("#videodiv5").fadeIn();
+            setTimeout(hidevideoplay, 2500);
+        }
+
+
         socket.on('data', function (data) {
             console.log(data);
 
