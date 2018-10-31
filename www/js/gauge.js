@@ -143,4 +143,11 @@ function setGuage(speeds) {
     gauge2.set(speeds[2]);
     gauge3.set(speeds[3]);
     gauge4.set(speeds[4]);
+
+    $('#fooval0').html(Math.floor(speeds[0]));
+    $('#fooval1').html(Math.floor(speeds[1]));
+    $('#fooval2').html(Math.floor(speeds[2]));
+    $('#fooval3').html(Math.floor(speeds[3]));
+    $('#fooval4').html(Math.floor(speeds[4]));
+
 }
