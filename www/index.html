@@ -40,37 +40,42 @@
         </div>
         <div class="col s2">
             <div class="bar" id="barbody0">
-                <div class="left"></div>
-                <div class="right"></div>
+                <!-- <div class="left"></div>
+                <div class="right"></div> -->
                 <div class="baroverlay" id="bar0" style="border-top:6px solid white"></div>
-            </div>
+            </div> 
+            <div id="bardone0" class="bardone center">You <br> did <br> it!</div>
         </div>
         <div class="col s2">
             <div class="bar" id="barbody1">
-                <div class="left"></div>
-                <div class="right"></div>
+                <!-- <div class="left"></div>
+                <div class="right"></div> -->
                 <div class="baroverlay" id="bar1" style="border-top:6px solid white"></div>
+            <div id="bardone1" class="bardone center">You <br> did <br> it!</div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar" id="barbody2">
-                <div class="left"></div>
-                <div class="right"></div>
+                <!-- <div class="left"></div>
+                <div class="right"></div> -->
                 <div class="baroverlay" id="bar2" style="border-top:6px solid white"></div>
+            <div id="bardone2" class="bardone center">You <br> did <br> it!</div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar" id="barbody3">
-                <div class="left"></div>
-                <div class="right"></div>
+                <!-- <div class="left"></div>
+                <div class="right"></div> -->
                 <div class="baroverlay" id="bar3" style="border-top:6px solid white"></div>
+            <div id="bardone3" class="bardone center">You <br> did <br> it!</div>
             </div>
         </div>
         <div class="col s2">
             <div class="bar" id="barbody4">
-                <div class="left"></div>
-                <div class="right"></div>
+                <!-- <div class="left"></div>
+                <div class="right"></div> -->
                 <div class="baroverlay" id="bar4" style="border-top:6px solid white"></div>
+            <div id="bardone4" class="bardone center">You <br> did <br> it!</div>
             </div>
         </div>
 <!-- 
@@ -235,6 +240,12 @@
             $("#videodiv2").hide();
             $("#videodiv1").hide();
 
+            $("#bardone0").hide();
+            $("#bardone1").hide();
+            $("#bardone2").hide();
+            $("#bardone3").hide();
+            $("#bardone4").hide();
+
             setGuage([10, 10, 10, 10, 10]);
 
             setBar([400, 400, 400, 400, 400]);
@@ -262,7 +273,8 @@
 
 
         function showtree(item) {
-            $("#barbody" + item).hide();
+            $("#barbody" + item).slideUp();
+            $("#bardone" + item).slideDown();
             $("#foo" + item).hide();
             $("#fooval" + item).hide();
             //$("#tree" + item).show();

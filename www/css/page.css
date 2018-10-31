@@ -2,11 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
 @import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
+
 * {
     font-family: 'Krub', sans-serif;
 }
-#number
-{
+
+#number {
     font-family: 'Diplomata SC', cursive;
 }
 
@@ -28,13 +29,14 @@
     /* transition: height 1s ease; */
 }
 
-#body_index{
+#body_index {
     background: url('/images/Forest1.png');
     background-attachment: fixed;
-    
+
     background-origin: 0px 0px;
     background-size: 100vw 100vh;
 }
+
 /* Hide the images by default */
 
 .mySlides {
@@ -195,7 +197,8 @@
     height: 400px;
     width: 200px;
     background: rgb(2, 170, 0);
-    background: linear-gradient(180deg, rgb(3, 150, 0) 0%, rgba(245, 253, 0, 0.8) 47%, rgb(228, 60, 23) 100%);
+    /* background: linear-gradient(180deg, rgb(3, 150, 0) 0%, rgba(245, 253, 0, 0.8) 47%, rgb(228, 60, 23) 100%); */
+    background: url('../images/triangle.png');
 }
 
 .bar .left {
@@ -226,10 +229,32 @@
 
     background: url('/images/Forest1.png');
     background-attachment: fixed;
-    
+
     background-origin: 0px 0px;
     background-size: 100vw 100vh;
     position: relative;
+}
+
+.bardone {
+    height: 350px;
+    width: 0px;
+    /* margin: 0px; */
+    /* background: #b2f1d5;*/
+
+    background: url('/images/Forest1.png');
+    background-attachment: fixed;
+
+    background-origin: 0px 0px;
+    background-size: 100vw 100vh;
+    position: relative;
+    word-wrap: break-word;
+    left: 100px;
+    top:25px;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(0, 122, 0);
+    text-shadow: rgb(60, 255, 0) 0px 5px 10px;
+
 }
 
 .modal {
@@ -257,7 +282,7 @@
 .tree {
     background: url('/images/Forest1.png');
     background-attachment: fixed;
-    
+
     background-origin: 0px 0px;
     background-size: 100vw 100vh;
 
