@@ -71,6 +71,26 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/www/index.html');
 });
 
+app.get('/reset', function(req, res) {
+    sendableObject = [{
+        meters: 0,
+        kmph: 0
+    }, {
+        meters: 0,
+        kmph: 0
+    }, {
+        meters: 0,
+        kmph: 0
+    }, {
+        meters: 0,
+        kmph: 0
+    }, {
+        meters: 0,
+        kmph: 0
+    }];
+    res.send(true);
+    console.log("Reset done.");
+});
 
 var oldRounds = [0, 0, 0, 0, 0, 0];
 var sendableObject = [{
@@ -95,25 +115,7 @@ io.on('connection', function (socket) {
         hello: 'world'
     });
 
-    socket.on('reset', function (data) {
-        console.log("reset done");
-        sendableObject = [{
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }, {
-            meters: 0,
-            kmph: 0
-        }];
-    });
+ 
 });
 
 
@@ -121,7 +123,7 @@ function presentor(rounds, x) {
     var diff = rounds - oldRounds[x];
     oldRounds[x] = rounds;
 
-    var m = sendableObject[x].meters + diff * 2 * 3.14 * 0.30; //this 0.30 is diameter
+    var m = sendableObject[x].meters + (diff * 2 * 3.14 * 0.30); //this 0.30 is diameter
 
     sendableObject[x] = {
         meters: m,

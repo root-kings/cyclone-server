@@ -205,6 +205,13 @@
             </video>
         </div>
     </div>
+
+
+    <audio src="/audio/claps.wav" id="audioclaps" type="audio/wav"></audio>
+    <audio src="/audio/cycle.wav" id="audiocycle" type="audio/wav" loop="loop"></audio>
+
+
+
     <script src="/js/jquery.min.js"></script>
     <script src="/js/materialize.min.js"></script>
     <!-- <script src="/js/Chart.Bundle.min.js"></script> -->
@@ -231,6 +238,9 @@
             setGuage([10, 10, 10, 10, 10]);
 
             setBar([400, 400, 400, 400, 400]);
+            cycle.play();
+            claps.pause();
+
 
         });
     </script>
@@ -246,9 +256,15 @@
 
         var dome = [false, false, false, false, false];
 
+
+        var claps = document.getElementById("audioclaps");
+        var cycle = document.getElementById("audiocycle");
+
+
         function showtree(item) {
             $("#barbody" + item).hide();
             $("#foo" + item).hide();
+            $("#fooval" + item).hide();
             //$("#tree" + item).show();
             dome[item] = true;
         }
@@ -256,7 +272,11 @@
 
         function resetstats() {
             console.log("reset sent");
-            socket.emit('reset', true);
+            $.get('/reset', true, function(done){
+                if(done){
+                    location.reload();
+                }
+            });
         }
 
         function checkdone(data) {
@@ -265,17 +285,28 @@
                     showtree(item);
                 }
             }
+
+            if (!(dome.includes(false))) {
+                showcongrats();
+            }
+
         }
 
         function hidecongrats() {
             $("#overlay1").fadeOut();
+            claps.pause();
+            cycle.load();
+            cycle.play();
         }
 
         function showcongrats() {
             console.log("one");
             $("#overlay1").fadeIn();
-            setTimeout(hidecongrats, 2500);
+            cycle.pause();
+            claps.load();
+            claps.play();
 
+            setTimeout(hidecongrats, 4000);
         }
 
         function videoplay1() {
