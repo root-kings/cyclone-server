@@ -1,9 +1,13 @@
 /* Slideshow container */
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
-
+@import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
 * {
     font-family: 'Krub', sans-serif;
+}
+#number
+{
+    font-family: 'Diplomata SC', cursive;
 }
 
 .slider .indicators .indicator-item.active {
