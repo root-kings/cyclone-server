@@ -123,7 +123,7 @@ function presentor(rounds, x) {
     var diff = rounds - oldRounds[x];
     oldRounds[x] = rounds;
 
-    var m = sendableObject[x].meters + diff * 2 * 3.14 * 0.30; //this 0.30 is diameter
+    var m = sendableObject[x].meters + (diff * 2 * 3.14 * 0.30); //this 0.30 is diameter
 
     sendableObject[x] = {
         meters: m,
