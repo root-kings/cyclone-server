@@ -1,13 +1,13 @@
 /* Slideshow container */
 
 @import url('https://fonts.googleapis.com/css?family=Krub');
-@import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
+@import url('https://fonts.googleapis.com/css?family=Faster+One');
 * {
     font-family: 'Krub', sans-serif;
 }
 #number
 {
-    font-family: 'Diplomata SC', cursive;
+    font-family: 'Faster One', cursive;
 }
 
 .slider .indicators .indicator-item.active {
@@ -268,3 +268,25 @@
     padding: 0;
     margin: 0;
 }
+
+.fooval {
+    position: relative;
+    right: -120px;
+    left: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+
+
+
+.strong {
+    font-weight: 600;
+}
+
+
+
+
+
+
